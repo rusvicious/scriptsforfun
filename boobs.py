@@ -7,7 +7,6 @@ def getUrl():
 	return url;
 
 def getBoobs(url):
-	result = 1;
 	try:
     		urllib2.urlopen(url);
     		webbrowser.open(url);
