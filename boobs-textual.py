@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import random, urllib2;
 
 def getUrl():

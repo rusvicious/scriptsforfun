@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import random, webbrowser, urllib2;
 
 def getUrl():
@@ -15,4 +15,5 @@ def getBoobs(url):
     		if e.code != 200:
     			getBoobs(getUrl());
 
-getBoobs(getUrl());
+if __name__ == '__main__':
+	getBoobs(getUrl());
