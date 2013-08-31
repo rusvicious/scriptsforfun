@@ -10,7 +10,7 @@ def getBoobs(url):
 	result = 1;
 	try:
     		urllib2.urlopen(url);
-    		webbrowser.open_new(url);
+    		webbrowser.open(url);
     
     	except urllib2.HTTPError, e:
     		if e.code != 200:
