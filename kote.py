@@ -1,19 +1,22 @@
 #!/usr/bin/env python
-import random, urllib2;
+import random, urllib2,re;
 
-def getUrl():
+def getKote():
 	number = random.randrange(353); 
 	url =    "http://kote-img.com/" + str(number);
-	return url;
 
-def getKote(url):
 	try:
-    		urllib2.urlopen(url);
-    		print(url);
+		response = urllib2.urlopen(url);
+    		data = response.read();	
+    		matches  = re.findall(".*media/kotes/.*",data);
+    		kote  = re.findall("src=\"(.+)\"",matches[0]);
+    		print("http://kote-img.com"+kote[0]);
     
     	except urllib2.HTTPError, e:
     		if e.code != 200:
-    			getKote(getUrl());
+    			getKote();
+
+	
 
 if __name__ == '__main__':
-	getKote(getUrl());
+	getKote();
