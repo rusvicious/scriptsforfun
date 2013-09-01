@@ -3,7 +3,7 @@ import random, urllib2;
 
 def getUrl():
 	number = random.randrange(353); 
-	url =    "http://kote-img.com"
+	url =    "http://kote-img.com/" + str(number);
 	return url;
 
 def getKote(url):
@@ -16,4 +16,4 @@ def getKote(url):
     			getKote(getUrl());
 
 if __name__ == '__main__':
-	getBoobs(getUrl());
+	getKote(getUrl());
