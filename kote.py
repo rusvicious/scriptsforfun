@@ -8,15 +8,12 @@ def getKote():
 	try:
 		response = urllib2.urlopen(url);
     		data = response.read();	
-    		#matches  = re.findall(".*media/kotes/.*",data);
     		kote  = re.findall("src=\"/media/kotes/(.+)\"",data);
     		print("http://kote-img.com/media/kotes/"+kote[0]);
     
     	except urllib2.HTTPError, e:
     		if e.code != 200:
     			getKote();
-
-	
 
 if __name__ == '__main__':
 	getKote();
