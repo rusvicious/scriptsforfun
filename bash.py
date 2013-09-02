@@ -11,7 +11,7 @@ def getQuote():
                 opener = urllib2.build_opener();
                 data   = opener.open(request).read();	
                 quote  = re.findall("<div class=\"text\">(.+)</div>",data);
-                print(quote[0]);
+                print(unicode(quote[0],"cp1251").encode("utf-8"));
     
         except urllib2.HTTPError, e:
     		if e.code != 200:
